@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class Task:
-    def __init(self, description):
+    def __init__(self, description):
         self.description = description
         self.created_at = datetime.now()
         self.completed_at = False
@@ -11,7 +11,7 @@ class Task:
         self.completed_at = True
 
     def __str__(self):
-        return self.description + (" (completed)" if self.completed_at else "")
+        return self.description + (" (concluída)" if self.completed_at else "")
 
 
 def main():
@@ -21,3 +21,10 @@ def main():
     house.append(Task("Limpar o chão"))
 
     [task.complete() for task in house if task.description == "Lavar louça"]
+
+    for task in house:
+        print(f"- {task}")
+
+
+if __name__ == "__main__":
+    main()
